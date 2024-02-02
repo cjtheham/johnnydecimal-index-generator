@@ -23,7 +23,7 @@
 
     const newCategory: ICategory = {
       id: uuid(),
-      order: $groupedCategories[areaId] ? $groupedCategories[areaId].length + 1 : 1, // new item = largest order number
+      order: $groupedCategories[areaId] ? $groupedCategories[areaId].length : 1, // new item = largest order number
       name: categoryName,
       areaId,
     };
