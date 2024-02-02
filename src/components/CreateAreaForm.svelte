@@ -14,7 +14,7 @@
     event.preventDefault();
     if (!areaName) return alert("please fill in name");
     if ($areas?.length >= MAX_AREA_COUNT) return alert("you cannot create a new area");
-    const newIndex = $areas ? $areas.length + 1 : 1;
+    const newIndex = $areas ? $areas.length : 1;
     const newArea: IArea = {
       id: uuid(),
       order: newIndex,
@@ -31,7 +31,7 @@
 
 <div>
   <form class="jd-form-set" on:submit={handleAdd}>
-    <code class="jd-id">{createAreaJdId($areas?.length ? $areas.length + 1 : 1)}</code>
+    <code class="jd-id">{createAreaJdId($areas?.length ? $areas.length : 0)}</code>
     <!-- input id attribute is only used for label relation, don't use for anything else. -->
     <label for="area-name-input">add new area</label>
     <input
