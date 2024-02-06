@@ -6,7 +6,7 @@ import { get } from "svelte/store";
 import { groupedThings } from "../stores";
 
 const stringifyThing = (thing: IThing, catJdId: string) => {
-  return `      ${createThingJdIdFromCategory(thing.order, catJdId)} ${thing.name}\n`;
+  return `      ${createThingJdIdFromCategory(thing.order, catJdId, thing.projectId)} ${thing.name}\n`;
 };
 
 const stringifyCategory = (category: ICategory, area: IAreaWithItems) => {

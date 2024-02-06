@@ -21,6 +21,8 @@
     if ($groupedCategories[areaId] && $groupedCategories[areaId]?.length >= MAX_CATEGORY_COUNT)
       return alert("you cannot create a new category");
 
+
+    // TODO - New categories start at 1, after deletion it goes back to 0 but it's weird.
     const newCategory: ICategory = {
       id: uuid(),
       order: $groupedCategories[areaId] ? $groupedCategories[areaId].length : 1, // new item = largest order number

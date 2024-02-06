@@ -40,9 +40,11 @@ export const createCategoryJdId = (order: number, areaOrder: number) => {
  * @param categoryJdId string — readable Category J.D id, eg. "11"
  * @returns string? — readable Thing J.D id, eg. "11.01"
  */
-export const createThingJdIdFromCategory = (order: number, categoryJdId: string) => {
+export const createThingJdIdFromCategory = (order: number, categoryJdId: string, projectId:string) => {
   if (!isValid(order, "THING")) return null;
-  return `${categoryJdId}.${order < 10 ? `0${order}` : order}`;
+  let string = `${categoryJdId}.${order < 10 ? `0${order}` : order}`;
+  if (projectId) { string = projectId + '.' + string}
+  return string;
 };
 
 /**

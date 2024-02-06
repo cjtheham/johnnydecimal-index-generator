@@ -17,6 +17,7 @@ export interface ICategory extends IJdBase {
 
 export interface IThing extends IJdBase {
   categoryId: ICategory["id"];
+  projectId: string;
 }
 
 export interface IAreaWithItems extends IArea {

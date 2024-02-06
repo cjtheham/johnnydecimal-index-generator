@@ -18,7 +18,7 @@ export const dndOptions = {
 export const reorderItems = (newItems: IArea[] | ICategory[] | IThing[]): IArea[] | ICategory[] | IThing[] => {
   return newItems.map((item, index) => ({
     ...item,
-    order: index + 1,
+    order: index,
   }));
 };
 

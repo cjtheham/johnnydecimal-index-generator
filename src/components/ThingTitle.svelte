@@ -52,7 +52,7 @@
     </div>
   {:else}
     <div class="jd-id-and-name">
-      <code class="jd-id">{createThingJdIdFromCategory(thing.order, category.jdReadableId || "")}</code>
+      <code class="jd-id">{createThingJdIdFromCategory(thing.order, category.jdReadableId, thing.projectId|| "")}</code>
       <strong class="jd-name">{thing.name}</strong>
     </div>
     <div class="jd-thing__actions">

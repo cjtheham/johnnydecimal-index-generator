@@ -11,6 +11,7 @@
   const dispatch = createEventDispatcher();
 
   let thingName = "";
+  let projectId = "";
   let inputRef;
 
   const handleAdd = () => {
@@ -19,9 +20,10 @@
 
     const newThing: IThing = {
       id: uuid(),
-      order: $groupedThings[categoryId] ? $groupedThings[categoryId].length + 1 : 1, // new item = largest order number
+      order: $groupedThings[categoryId] ? $groupedThings[categoryId].length : 1, // new item = largest order number
       name: thingName,
       categoryId,
+      projectId: projectId,
     };
 
     if ($groupedThings[categoryId]) {
@@ -40,6 +42,15 @@
 <form class="jd-form-set" on:submit|preventDefault={handleAdd}>
   <!-- input id attribute is only used for label relation, don't use for anything else. -->
   <label for="thing-name-input">add new thing</label>
+  <input
+    id="thing-name-input"
+    class="jd-text-input"
+    type="text"
+    placeholder="project ID"
+    autocomplete="off"
+    bind:this={inputRef}
+    bind:value={projectId}
+  />
   <input
     id="thing-name-input"
     class="jd-text-input"
